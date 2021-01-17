@@ -1,4 +1,8 @@
-eckSystem() {
+#!/usr/bin/env bash
+# 检测区
+# -------------------------------------------------------------
+# 检查系统
+checkSystem() {
 	if [[ -n $(find /etc -name "redhat-release") ]] || grep </proc/version -q -i "centos"; then
 		centosVersion=$(rpm -q centos-release | awk -F "[-]" '{print $3}' | awk -F "[.]" '{print $1}')
 
